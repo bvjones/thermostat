@@ -19,6 +19,10 @@ Thermostat.prototype.increase = function () {
   }
 };
 
+Thermostat.prototype.getTemperature = function (){
+  return this.temperature
+};
+
 Thermostat.prototype.decrease = function () {
   if (this.temperature == this.MINIMUM){
     throw ("Minimum Temperature is 10");
@@ -30,11 +34,13 @@ Thermostat.prototype.decrease = function () {
 Thermostat.prototype.powerSaverOn = function() {
   this.powerSaver = true;
   this.maximum = this.POWERSAVING_ON_MAXIMUM;
+  return "Power Saving Mode - On"
 };
 
 Thermostat.prototype.powerSaverOff = function() {
   this.powerSaver = false;
   this.maximum = this.POWERSAVING_OFF_MAXIMUM;
+  return "Power Saving Mode - Off"
 };
 
 Thermostat.prototype.reset = function() {
